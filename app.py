@@ -42,7 +42,7 @@ def inference(sam_type, box_threshold, text_threshold, image, text_prompt):
         print(f"Request failed with status code {response.status_code}: {response.text}")
         return None
 
-
+'''
 with gr.Blocks(title="lang-sam") as blocks:
     with gr.Row():
         sam_model_choices = gr.Dropdown(choices=list(SAM_MODELS.keys()), label="SAM Model", value="sam2.1_hiera_small")
@@ -91,7 +91,9 @@ with gr.Blocks(title="lang-sam") as blocks:
         outputs=output_image,
     )
 
+
 server.app = gr.mount_gradio_app(server.app, blocks, path="/gradio")
+'''
 
 if __name__ == "__main__":
     print(f"Starting LitServe and Gradio server on port {PORT}...")
